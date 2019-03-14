@@ -30,9 +30,9 @@ for( unsigned int i=0; i<plaintext.length();i++){
                 ciphertext+=' ';
             }
             else{
-                dekey+=26-key[i%keylength]+65*2;
-                div_t ptxtdiv= div(plaintext[i]+dekey[i%keylength]-65*2,26);
-                int rem= ptxtdiv.rem;
+                dekey[i]=div(26-(key[i]-65),26).rem+65;
+                int rem= div(plaintext[i]+dekey[i%keylength]-65*2,26).rem;
+
                 ciphertext+= char (rem+65);
                     };
         };
