@@ -1,2 +1,5 @@
 
 VignereCipher.cbp
+*.o
+*.depend
+*.layout
